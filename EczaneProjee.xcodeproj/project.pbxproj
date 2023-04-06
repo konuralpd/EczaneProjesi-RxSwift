@@ -16,6 +16,7 @@
 		046878FD29DF1777003CB807 /* EczaneProjeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046878FC29DF1777003CB807 /* EczaneProjeeTests.swift */; };
 		0468790729DF1777003CB807 /* EczaneProjeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468790629DF1777003CB807 /* EczaneProjeeUITests.swift */; };
 		0468790929DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468790829DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift */; };
+		F0D1953529DF183800389D29 /* ekremswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D1953429DF183800389D29 /* ekremswift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0468790229DF1777003CB807 /* EczaneProjeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EczaneProjeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0468790629DF1777003CB807 /* EczaneProjeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EczaneProjeeUITests.swift; sourceTree = "<group>"; };
 		0468790829DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EczaneProjeeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F0D1953429DF183800389D29 /* ekremswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ekremswift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		046878E429DF1775003CB807 /* EczaneProjee */ = {
 			isa = PBXGroup;
 			children = (
+				F0D1953329DF182800389D29 /* ekrem */,
 				046878E529DF1775003CB807 /* AppDelegate.swift */,
 				046878E729DF1775003CB807 /* SceneDelegate.swift */,
 				046878E929DF1775003CB807 /* ViewController.swift */,
@@ -125,6 +128,14 @@
 				0468790829DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift */,
 			);
 			path = EczaneProjeeUITests;
+			sourceTree = "<group>";
+		};
+		F0D1953329DF182800389D29 /* ekrem */ = {
+			isa = PBXGroup;
+			children = (
+				F0D1953429DF183800389D29 /* ekremswift.swift */,
+			);
+			path = ekrem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D1953529DF183800389D29 /* ekremswift.swift in Sources */,
 				046878EA29DF1775003CB807 /* ViewController.swift in Sources */,
 				046878E629DF1775003CB807 /* AppDelegate.swift in Sources */,
 				046878E829DF1775003CB807 /* SceneDelegate.swift in Sources */,
