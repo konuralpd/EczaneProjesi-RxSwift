@@ -9,4 +9,5 @@ import Foundation
 
 class Alp {
     let value = 10
+    let string = "213123"
 }
