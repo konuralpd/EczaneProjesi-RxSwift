@@ -17,6 +17,7 @@
 		0468790729DF1777003CB807 /* EczaneProjeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468790629DF1777003CB807 /* EczaneProjeeUITests.swift */; };
 		0468790929DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468790829DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift */; };
 		0468791629DF1830003CB807 /* Alp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468791529DF1830003CB807 /* Alp.swift */; };
+		0468791829DF1CB8003CB807 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468791729DF1CB8003CB807 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		0468790629DF1777003CB807 /* EczaneProjeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EczaneProjeeUITests.swift; sourceTree = "<group>"; };
 		0468790829DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EczaneProjeeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0468791529DF1830003CB807 /* Alp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alp.swift; sourceTree = "<group>"; };
+		0468791729DF1CB8003CB807 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				046878F029DF1777003CB807 /* LaunchScreen.storyboard */,
 				046878F329DF1777003CB807 /* Info.plist */,
 				0468791529DF1830003CB807 /* Alp.swift */,
+				0468791729DF1CB8003CB807 /* CollectionViewCell.swift */,
 			);
 			path = EczaneProjee;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0468791829DF1CB8003CB807 /* CollectionViewCell.swift in Sources */,
 				046878EA29DF1775003CB807 /* ViewController.swift in Sources */,
 				0468791629DF1830003CB807 /* Alp.swift in Sources */,
 				046878E629DF1775003CB807 /* AppDelegate.swift in Sources */,
