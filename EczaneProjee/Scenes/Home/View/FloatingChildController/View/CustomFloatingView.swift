@@ -13,44 +13,73 @@ final class CustomFloatingView: UIView {
     
     private lazy var grabberView = CustomGrabberView()
 
-    private lazy var cityLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "İstanbul"
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.6
-        return label
-    }()
-    
-    private lazy var cancelButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "xmark"), for: .normal)
-        button.imageView?.image?.withTintColor(.black)
-        return button
-    }()
-    
-    private lazy var pharmacyCountLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "3 eczane bulundu"
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.6
-        return label
+ 
+    lazy var pharmacyTableView: UITableView = {
+        let table = UITableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.register(PharmacyTableViewCell.self, forCellReuseIdentifier: PharmacyTableViewCell.identifier)
+        table.backgroundColor = .white.withAlphaComponent(0.92)
+        return table
     }()
     
     //MARK: - Init Methods
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .white.withAlphaComponent(0.92)
+        addSubview(grabberView)
+        makeTableView()
+        //Constaints
+        setUpConstraints()
+        
+        
+    }
+    
+    private func makeTableView() {
+        addSubview(pharmacyTableView)
+        pharmacyTableView.delegate = self
+        pharmacyTableView.dataSource = self
+        
+        pharmacyTableView.tableHeaderView = PharmacyTableViewHeader(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 84))
         
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+     
+    }
+    
+    private func setUpConstraints() {
+        
+        NSLayoutConstraint.activate([
+            grabberView.topAnchor.constraint(equalTo: topAnchor, constant: 6),
+            grabberView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            grabberView.heightAnchor.constraint(equalToConstant: 3),
+            grabberView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 3),
+            
+            pharmacyTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
+            pharmacyTableView.topAnchor.constraint(equalTo: grabberView.bottomAnchor, constant: 4),
+            pharmacyTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
+            pharmacyTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
     
     
 
+}
+
+extension CustomFloatingView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PharmacyTableViewCell.identifier, for: indexPath) as? PharmacyTableViewCell else { return UITableViewCell() }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 84
+    }
+    
+    
 }

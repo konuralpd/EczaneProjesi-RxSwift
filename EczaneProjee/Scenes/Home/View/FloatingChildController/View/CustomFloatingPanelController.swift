@@ -8,6 +8,13 @@
 import UIKit
 
 final class CustomFloatingPanelController: UIViewController {
+    
+    let customView = CustomFloatingView()
+    
+    override func loadView() {
+        super.loadView()
+        self.view = customView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

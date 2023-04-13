@@ -19,6 +19,17 @@
 		04B24A6D29E845480014AA16 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 04B24A6C29E845480014AA16 /* RxCocoa */; };
 		04B24A6F29E845480014AA16 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 04B24A6E29E845480014AA16 /* RxRelay */; };
 		04B24A7129E845480014AA16 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04B24A7029E845480014AA16 /* RxSwift */; };
+		04B24A7429E862F30014AA16 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B24A7329E862F30014AA16 /* CustomTextField.swift */; };
+		04B24A7729E8729C0014AA16 /* CitySelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B24A7629E8729C0014AA16 /* CitySelectTableViewCell.swift */; };
+		04B24A7A29E87BD00014AA16 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B24A7929E87BD00014AA16 /* NetworkManager.swift */; };
+		04B24A7C29E87E9D0014AA16 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B24A7B29E87E9D0014AA16 /* NetworkConstants.swift */; };
+		04B24A7E29E87EC60014AA16 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B24A7D29E87EC60014AA16 /* Endpoint.swift */; };
+		04B24A8029E87F670014AA16 /* EndpointCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B24A7F29E87F670014AA16 /* EndpointCases.swift */; };
+		04B24A8329E881D80014AA16 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B24A8229E881D80014AA16 /* HomeViewModel.swift */; };
+		04B24A8729E885760014AA16 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B24A8629E885760014AA16 /* NetworkService.swift */; };
+		04B24A8A29E885E20014AA16 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B24A8929E885E20014AA16 /* CityModel.swift */; };
+		04B24A8D29E891D70014AA16 /* PharmacyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B24A8C29E891D70014AA16 /* PharmacyTableViewCell.swift */; };
+		04B24A9029E8956B0014AA16 /* PharmacyTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B24A8F29E8956B0014AA16 /* PharmacyTableViewHeader.swift */; };
 		F03AD4F729E8282B008BBFBB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD4F629E8282B008BBFBB /* HomeController.swift */; };
 		F03AD4F929E829D6008BBFBB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD4F829E829D6008BBFBB /* HomeView.swift */; };
 		F03AD4FC29E842F5008BBFBB /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD4FB29E842F5008BBFBB /* UIViewController+HideKeyboard.swift */; };
@@ -56,6 +67,17 @@
 		0468790229DF1777003CB807 /* EczaneProjeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EczaneProjeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0468790629DF1777003CB807 /* EczaneProjeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EczaneProjeeUITests.swift; sourceTree = "<group>"; };
 		0468790829DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EczaneProjeeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04B24A7329E862F30014AA16 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		04B24A7629E8729C0014AA16 /* CitySelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectTableViewCell.swift; sourceTree = "<group>"; };
+		04B24A7929E87BD00014AA16 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		04B24A7B29E87E9D0014AA16 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		04B24A7D29E87EC60014AA16 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		04B24A7F29E87F670014AA16 /* EndpointCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointCases.swift; sourceTree = "<group>"; };
+		04B24A8229E881D80014AA16 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		04B24A8629E885760014AA16 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		04B24A8929E885E20014AA16 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		04B24A8C29E891D70014AA16 /* PharmacyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyTableViewCell.swift; sourceTree = "<group>"; };
+		04B24A8F29E8956B0014AA16 /* PharmacyTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyTableViewHeader.swift; sourceTree = "<group>"; };
 		F03AD4F629E8282B008BBFBB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		F03AD4F829E829D6008BBFBB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F03AD4FB29E842F5008BBFBB /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
@@ -117,6 +139,7 @@
 		046878E429DF1775003CB807 /* EczaneProjee */ = {
 			isa = PBXGroup;
 			children = (
+				04B24A7829E87AFA0014AA16 /* Network */,
 				F03AD4EF29E82764008BBFBB /* Base */,
 				F03AD4FA29E842DE008BBFBB /* Extensions */,
 				F03AD4FD29E84DFB008BBFBB /* Components */,
@@ -144,6 +167,59 @@
 			path = EczaneProjeeUITests;
 			sourceTree = "<group>";
 		};
+		04B24A7229E862E10014AA16 /* CustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				04B24A7329E862F30014AA16 /* CustomTextField.swift */,
+			);
+			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		04B24A7529E8728B0014AA16 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04B24A7629E8729C0014AA16 /* CitySelectTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		04B24A7829E87AFA0014AA16 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				04B24A7929E87BD00014AA16 /* NetworkManager.swift */,
+				04B24A7B29E87E9D0014AA16 /* NetworkConstants.swift */,
+				04B24A7D29E87EC60014AA16 /* Endpoint.swift */,
+				04B24A7F29E87F670014AA16 /* EndpointCases.swift */,
+				04B24A8629E885760014AA16 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		04B24A8129E881CF0014AA16 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04B24A8229E881D80014AA16 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04B24A8829E885C40014AA16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04B24A8929E885E20014AA16 /* CityModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04B24A8E29E891EB0014AA16 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				04B24A8C29E891D70014AA16 /* PharmacyTableViewCell.swift */,
+				04B24A8F29E8956B0014AA16 /* PharmacyTableViewHeader.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F03AD4EF29E82764008BBFBB /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +240,8 @@
 		F03AD4F229E82795008BBFBB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				04B24A8829E885C40014AA16 /* Model */,
+				04B24A8129E881CF0014AA16 /* ViewModel */,
 				F03AD4F529E82818008BBFBB /* View */,
 			);
 			path = Home;
@@ -189,6 +267,7 @@
 		F03AD4F529E82818008BBFBB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04B24A7529E8728B0014AA16 /* Cell */,
 				F03AD50829E857AB008BBFBB /* FloatingChildController */,
 				F03AD4F629E8282B008BBFBB /* HomeController.swift */,
 				F03AD4F829E829D6008BBFBB /* HomeView.swift */,
@@ -207,6 +286,7 @@
 		F03AD4FD29E84DFB008BBFBB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				04B24A7229E862E10014AA16 /* CustomTextField */,
 				F03AD4FE29E84E03008BBFBB /* CustomGrabberView */,
 			);
 			path = Components;
@@ -231,6 +311,7 @@
 		F03AD50929E857B9008BBFBB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04B24A8E29E891EB0014AA16 /* Cell */,
 				F03AD50A29E857D6008BBFBB /* CustomFloatingPanelController.swift */,
 				F03AD50C29E857F3008BBFBB /* CustomFloatingView.swift */,
 			);
@@ -380,13 +461,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				046878E629DF1775003CB807 /* AppDelegate.swift in Sources */,
+				04B24A8A29E885E20014AA16 /* CityModel.swift in Sources */,
 				F03AD50B29E857D6008BBFBB /* CustomFloatingPanelController.swift in Sources */,
+				04B24A7729E8729C0014AA16 /* CitySelectTableViewCell.swift in Sources */,
+				04B24A7E29E87EC60014AA16 /* Endpoint.swift in Sources */,
+				04B24A8029E87F670014AA16 /* EndpointCases.swift in Sources */,
 				F03AD4F929E829D6008BBFBB /* HomeView.swift in Sources */,
+				04B24A7C29E87E9D0014AA16 /* NetworkConstants.swift in Sources */,
+				04B24A7A29E87BD00014AA16 /* NetworkManager.swift in Sources */,
 				046878E829DF1775003CB807 /* SceneDelegate.swift in Sources */,
 				F03AD4F729E8282B008BBFBB /* HomeController.swift in Sources */,
+				04B24A8729E885760014AA16 /* NetworkService.swift in Sources */,
 				F03AD50D29E857F3008BBFBB /* CustomFloatingView.swift in Sources */,
+				04B24A9029E8956B0014AA16 /* PharmacyTableViewHeader.swift in Sources */,
 				F03AD4FC29E842F5008BBFBB /* UIViewController+HideKeyboard.swift in Sources */,
 				F03AD50029E84E16008BBFBB /* CustomGrabberView.swift in Sources */,
+				04B24A8329E881D80014AA16 /* HomeViewModel.swift in Sources */,
+				04B24A8D29E891D70014AA16 /* PharmacyTableViewCell.swift in Sources */,
+				04B24A7429E862F30014AA16 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
