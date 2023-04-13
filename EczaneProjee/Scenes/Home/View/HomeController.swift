@@ -8,18 +8,18 @@
 import UIKit
 
 final class HomeController: UIViewController {
-
-    //MARK: - Life Cycle Methods
     
+    private lazy var homeView = HomeView()
+    
+    //MARK: - Life Cycle Methods
     override func loadView() {
         super.loadView()
-        view.backgroundColor = .yellow
+        view = homeView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setupHideKeyboardWhenTapOutside()
     }
-  
-
+    
 }
