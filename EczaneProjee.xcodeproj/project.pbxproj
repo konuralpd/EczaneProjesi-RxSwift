@@ -15,6 +15,8 @@
 		0468790729DF1777003CB807 /* EczaneProjeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468790629DF1777003CB807 /* EczaneProjeeUITests.swift */; };
 		0468790929DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468790829DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift */; };
 		F03AD4F729E8282B008BBFBB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD4F629E8282B008BBFBB /* HomeController.swift */; };
+		F03AD4F929E829D6008BBFBB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD4F829E829D6008BBFBB /* HomeView.swift */; };
+		F03AD4FC29E842F5008BBFBB /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD4FB29E842F5008BBFBB /* UIViewController+HideKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		0468790629DF1777003CB807 /* EczaneProjeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EczaneProjeeUITests.swift; sourceTree = "<group>"; };
 		0468790829DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EczaneProjeeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F03AD4F629E8282B008BBFBB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		F03AD4F829E829D6008BBFBB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F03AD4FB29E842F5008BBFBB /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				F03AD4EF29E82764008BBFBB /* Base */,
+				F03AD4FA29E842DE008BBFBB /* Extensions */,
 				F03AD4F129E82791008BBFBB /* Scenes */,
 				F03AD4F329E827A5008BBFBB /* Resources */,
 				F03AD4F429E827CB008BBFBB /* Support */,
@@ -168,8 +173,17 @@
 			isa = PBXGroup;
 			children = (
 				F03AD4F629E8282B008BBFBB /* HomeController.swift */,
+				F03AD4F829E829D6008BBFBB /* HomeView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F03AD4FA29E842DE008BBFBB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F03AD4FB29E842F5008BBFBB /* UIViewController+HideKeyboard.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,8 +317,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				046878E629DF1775003CB807 /* AppDelegate.swift in Sources */,
+				F03AD4F929E829D6008BBFBB /* HomeView.swift in Sources */,
 				046878E829DF1775003CB807 /* SceneDelegate.swift in Sources */,
 				F03AD4F729E8282B008BBFBB /* HomeController.swift in Sources */,
+				F03AD4FC29E842F5008BBFBB /* UIViewController+HideKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
