@@ -22,6 +22,9 @@
 		F03AD4F729E8282B008BBFBB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD4F629E8282B008BBFBB /* HomeController.swift */; };
 		F03AD4F929E829D6008BBFBB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD4F829E829D6008BBFBB /* HomeView.swift */; };
 		F03AD4FC29E842F5008BBFBB /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD4FB29E842F5008BBFBB /* UIViewController+HideKeyboard.swift */; };
+		F03AD50029E84E16008BBFBB /* CustomGrabberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD4FF29E84E16008BBFBB /* CustomGrabberView.swift */; };
+		F03AD50B29E857D6008BBFBB /* CustomFloatingPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD50A29E857D6008BBFBB /* CustomFloatingPanelController.swift */; };
+		F03AD50D29E857F3008BBFBB /* CustomFloatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD50C29E857F3008BBFBB /* CustomFloatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		F03AD4F629E8282B008BBFBB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		F03AD4F829E829D6008BBFBB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F03AD4FB29E842F5008BBFBB /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
+		F03AD4FF29E84E16008BBFBB /* CustomGrabberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGrabberView.swift; sourceTree = "<group>"; };
+		F03AD50A29E857D6008BBFBB /* CustomFloatingPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFloatingPanelController.swift; sourceTree = "<group>"; };
+		F03AD50C29E857F3008BBFBB /* CustomFloatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFloatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 			children = (
 				F03AD4EF29E82764008BBFBB /* Base */,
 				F03AD4FA29E842DE008BBFBB /* Extensions */,
+				F03AD4FD29E84DFB008BBFBB /* Components */,
 				F03AD4F129E82791008BBFBB /* Scenes */,
 				F03AD4F329E827A5008BBFBB /* Resources */,
 				F03AD4F429E827CB008BBFBB /* Support */,
@@ -182,6 +189,7 @@
 		F03AD4F529E82818008BBFBB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F03AD50829E857AB008BBFBB /* FloatingChildController */,
 				F03AD4F629E8282B008BBFBB /* HomeController.swift */,
 				F03AD4F829E829D6008BBFBB /* HomeView.swift */,
 			);
@@ -194,6 +202,39 @@
 				F03AD4FB29E842F5008BBFBB /* UIViewController+HideKeyboard.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F03AD4FD29E84DFB008BBFBB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F03AD4FE29E84E03008BBFBB /* CustomGrabberView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F03AD4FE29E84E03008BBFBB /* CustomGrabberView */ = {
+			isa = PBXGroup;
+			children = (
+				F03AD4FF29E84E16008BBFBB /* CustomGrabberView.swift */,
+			);
+			path = CustomGrabberView;
+			sourceTree = "<group>";
+		};
+		F03AD50829E857AB008BBFBB /* FloatingChildController */ = {
+			isa = PBXGroup;
+			children = (
+				F03AD50929E857B9008BBFBB /* View */,
+			);
+			path = FloatingChildController;
+			sourceTree = "<group>";
+		};
+		F03AD50929E857B9008BBFBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F03AD50A29E857D6008BBFBB /* CustomFloatingPanelController.swift */,
+				F03AD50C29E857F3008BBFBB /* CustomFloatingView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,10 +380,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				046878E629DF1775003CB807 /* AppDelegate.swift in Sources */,
+				F03AD50B29E857D6008BBFBB /* CustomFloatingPanelController.swift in Sources */,
 				F03AD4F929E829D6008BBFBB /* HomeView.swift in Sources */,
 				046878E829DF1775003CB807 /* SceneDelegate.swift in Sources */,
 				F03AD4F729E8282B008BBFBB /* HomeController.swift in Sources */,
+				F03AD50D29E857F3008BBFBB /* CustomFloatingView.swift in Sources */,
 				F03AD4FC29E842F5008BBFBB /* UIViewController+HideKeyboard.swift in Sources */,
+				F03AD50029E84E16008BBFBB /* CustomGrabberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

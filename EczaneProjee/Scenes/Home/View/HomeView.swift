@@ -39,7 +39,7 @@ final class HomeView: UIView {
         return imageView
     }()
     
-    private lazy var searchTextField: UITextField = {
+    lazy var searchTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.attributedPlaceholder = NSAttributedString(string: "Şehir ara", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
