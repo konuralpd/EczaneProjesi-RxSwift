@@ -116,7 +116,7 @@ extension HomeController {
     private func createFloatingPanel(city: String, county: String) {
         floationgPanel.surfaceView.backgroundColor = .clear
         floationgPanel.isRemovalInteractionEnabled = false
-        let floatingViewModel = FloatingPanelViewModel(selectedCity: city, selectedCounty: city)
+        let floatingViewModel = FloatingPanelViewModel(selectedCity: city, selectedCounty: county)
         let customFloatingPanelController = CustomFloatingPanelController(viewModel: floatingViewModel)
         floationgPanel.set(contentViewController: customFloatingPanelController)
         floationgPanel.addPanel(toParent: self)
