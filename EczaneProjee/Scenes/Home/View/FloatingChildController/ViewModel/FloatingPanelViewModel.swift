@@ -29,7 +29,7 @@ final class FloatingPanelViewModel {
             case .next(let pharmacyList):
                 if let list = pharmacyList?.data {
                     self.pharmacyList.onNext(list)
-                    print(self.pharmacyList)
+                    print(list)
                 }
             case .error(let error):
                 print(error.localizedDescription)

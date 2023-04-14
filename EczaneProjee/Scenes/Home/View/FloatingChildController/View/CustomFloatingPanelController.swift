@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class CustomFloatingPanelController: UIViewController {
     
     let customView = CustomFloatingView()
     
-
+    private let disposeBag = DisposeBag()
     weak var viewModel: FloatingPanelViewModel?
     
     init(viewModel: FloatingPanelViewModel? = nil) {
@@ -27,14 +29,20 @@ final class CustomFloatingPanelController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = customView
-        guard let viewModel = viewModel else { return }
-        viewModel.getPharmacyList(viewModel.selectedCity, viewModel.selectedCounty)
-        
+        setReactiveFloatingTableView()
+      
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        guard let viewModel = viewModel else { return }
+        viewModel.getPharmacyList(viewModel.selectedCity, viewModel.selectedCounty)
+    }
+    
+    private func setReactiveFloatingTableView() {
+        viewModel?.pharmacyList.bind(to: customView.pharmacyTableView.rx.items(cellIdentifier: PharmacyTableViewCell.identifier, cellType: PharmacyTableViewCell.self)) { row,pharmacy,cell in
+            cell.setWithData(pharmacy)
+        }.disposed(by: disposeBag)
     }
     
 

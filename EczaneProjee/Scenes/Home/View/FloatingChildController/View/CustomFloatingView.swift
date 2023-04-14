@@ -36,9 +36,7 @@ final class CustomFloatingView: UIView {
     
     private func makeTableView() {
         addSubview(pharmacyTableView)
-        pharmacyTableView.delegate = self
-        pharmacyTableView.dataSource = self
-        
+       
         pharmacyTableView.tableHeaderView = PharmacyTableViewHeader(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 84))
         
     }
@@ -67,19 +65,4 @@ final class CustomFloatingView: UIView {
 
 }
 
-extension CustomFloatingView: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PharmacyTableViewCell.identifier, for: indexPath) as? PharmacyTableViewCell else { return UITableViewCell() }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 84
-    }
-    
-    
-}
+

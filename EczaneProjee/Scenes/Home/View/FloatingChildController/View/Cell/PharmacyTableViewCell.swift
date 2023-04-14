@@ -14,7 +14,7 @@ class PharmacyTableViewCell: UITableViewCell {
     private lazy var cellIcon: UIImageView = {
        let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
-        iv.image = UIImage(named: "pharmacy")
+        iv.image = UIImage(named: "logo")
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
@@ -49,4 +49,7 @@ class PharmacyTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setWithData(_ model: Pharmacy) {
+        self.pharmacyName.text = model.eczaneAdi
+    }
 }
