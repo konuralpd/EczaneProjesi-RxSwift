@@ -20,7 +20,7 @@ final class HomeView: UIView {
     private lazy var navigationView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white.withAlphaComponent(0.52)
+        view.backgroundColor = .white
         return view
     }()
     
@@ -57,7 +57,7 @@ final class HomeView: UIView {
             placeholder: "Şehir Ara",
             padding: 42,
             cornerRadius: 8,
-            backgroundColor: .white.withAlphaComponent(0.6),
+            backgroundColor: .white,
             isSecureTextEntry: false)
         field.autocapitalizationType = .none
         field.textColor = .black
@@ -118,13 +118,13 @@ extension HomeView {
             navigationView.leadingAnchor.constraint(equalTo: mapView.leadingAnchor),
             navigationView.trailingAnchor.constraint(equalTo: mapView.trailingAnchor),
             navigationView.topAnchor.constraint(equalTo: mapView.topAnchor),
-            navigationView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 8)
+            navigationView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 10)
         ])
         
         NSLayoutConstraint.activate([
             logoImageView.centerXAnchor.constraint(equalTo: navigationView.centerXAnchor),
             logoImageView.bottomAnchor.constraint(equalTo: navigationView.bottomAnchor, constant: -12),
-            logoImageView.heightAnchor.constraint(equalTo: navigationView.heightAnchor, multiplier: 0.4),
+            logoImageView.heightAnchor.constraint(equalTo: navigationView.heightAnchor, multiplier: 0.3),
             logoImageView.widthAnchor.constraint(equalTo: logoImageView.heightAnchor, multiplier: 1)
         ])
         
@@ -132,7 +132,7 @@ extension HomeView {
             searchTextField.topAnchor.constraint(equalTo: navigationView.bottomAnchor, constant: 12),
             searchTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24),
             searchTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24),
-            searchTextField.heightAnchor.constraint(equalTo: navigationView.heightAnchor, multiplier: 0.36)
+            searchTextField.heightAnchor.constraint(equalTo: navigationView.heightAnchor, multiplier: 0.40)
         ])
         
         NSLayoutConstraint.activate([
