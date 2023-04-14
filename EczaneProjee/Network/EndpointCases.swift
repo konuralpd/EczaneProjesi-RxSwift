@@ -6,10 +6,10 @@
 //
 
 import Foundation
-import Alamofire
 
 enum EndPointCases: EndPoint {
     case getCities
+    case getCounties(String)
     
     var apiKey: String {
         return ""
@@ -27,11 +27,9 @@ enum EndPointCases: EndPoint {
         switch self {
         case .getCities:
             return "/city?"
+        case .getCounties(let city):
+            return "/city?city=\(city)"
         }
-    }
-    
-    var headers: Alamofire.HTTPHeaders? {
-        return [.authorization(bearerToken: NetworkConstants.apiToken)]
     }
     
     var body: [String : Any]? {

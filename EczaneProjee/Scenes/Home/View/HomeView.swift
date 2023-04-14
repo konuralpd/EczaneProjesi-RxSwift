@@ -7,11 +7,12 @@
 
 import UIKit
 import MapKit
+import RxSwift
 
 final class HomeView: UIView {
     
     //MARK: - Creating UI Elements
-    private lazy var mapView: MKMapView = {
+    lazy var mapView: MKMapView = {
         let mapView = MKMapView()
         mapView.translatesAutoresizingMaskIntoConstraints = false
         return mapView
@@ -67,12 +68,25 @@ final class HomeView: UIView {
         return field
     }()
     
+    
+    let mapViewTapGesture: UITapGestureRecognizer = {
+        let gesture = UITapGestureRecognizer()
+        gesture.cancelsTouchesInView = false
+        return gesture
+    }()
+    
+    private let disposeBag = DisposeBag()
+
+    
     var isCitySelectionOpen = false
 
     //MARK: - Init Methods
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
+        addGestureRecogToMapView()
+        tapGestureCallbacks()
+
     }
     
     required init?(coder: NSCoder) {
@@ -80,6 +94,20 @@ final class HomeView: UIView {
     }
     
     
+    private func tapGestureCallbacks() {
+        mapViewTapGesture.rx.event.bind { [weak self] recognizer in
+            guard let self = self else { return }
+            if !citySelectionTableView.frame.contains(self.mapViewTapGesture.location(in: mapView)) {
+                makeTableViewAnimation()
+            }
+        }.disposed(by: disposeBag)
+    }
+    
+    //MARK: - TapGesture to MapView
+    
+    private func addGestureRecogToMapView() {
+        mapView.addGestureRecognizer(mapViewTapGesture)
+    }
     
 }
 
@@ -146,7 +174,7 @@ extension HomeView {
             citySelectionTableView.leadingAnchor.constraint(equalTo: searchTextField.leadingAnchor),
             citySelectionTableView.trailingAnchor.constraint(equalTo: searchTextField.trailingAnchor),
             citySelectionTableView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            citySelectionTableView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 3)
+            citySelectionTableView.heightAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.height / 3)
         ])
         
     }
@@ -156,7 +184,8 @@ extension HomeView {
         if !isCitySelectionOpen {
              UIView.animate(withDuration: 0.5) {
                  self.citySelectionTableView.alpha = 1
-                 self.citySelectionTableView.transform = CGAffineTransform(translationX: 0, y: -(UIScreen.main.bounds.height / 8))
+                 let moveY = self.navigationView.frame.height + 12 + self.searchTextField.frame.height
+                 self.citySelectionTableView.transform = CGAffineTransform(translationX: 0, y: -(moveY))
              }
         } else {
             UIView.animate(withDuration: 0.5) {

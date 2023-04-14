@@ -15,10 +15,12 @@ final class NetworkManager {
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(NetworkConstants.apiToken)"
         ]
+        
         return Observable.create { observer in
             AF.request(path, headers: headers).validate().responseDecodable(of: T.self) { response in
                 switch response.result {
                 case .success(let model):
+                    print(model)
                     observer.onNext(model)
                     observer.onCompleted()
                 case .failure(let error):

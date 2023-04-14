@@ -10,7 +10,7 @@ import UIKit
 class CitySelectTableViewCell: UITableViewCell {
     
     static let identifier = "CitySelectTableViewCell"
-    
+ 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -26,5 +26,20 @@ class CitySelectTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+    }
+    
+    func animateBackgroundColor(onCompleted: @escaping () -> Void) {
+        let animation = CATransition()
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        animation.type = .fade
+        animation.duration = 0.05
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.systemRed
+        selectedBackgroundView = bgColorView
+        
+        self.layer.add(animation, forKey: "changeTextTransition")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            onCompleted()
+        }
     }
 }

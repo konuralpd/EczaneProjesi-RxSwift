@@ -23,3 +23,7 @@ struct City: Codable {
         case sehirSlug = "SehirSlug"
     }
 }
+
+
+
+

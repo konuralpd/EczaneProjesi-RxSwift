@@ -36,6 +36,7 @@
 		F03AD50029E84E16008BBFBB /* CustomGrabberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD4FF29E84E16008BBFBB /* CustomGrabberView.swift */; };
 		F03AD50B29E857D6008BBFBB /* CustomFloatingPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD50A29E857D6008BBFBB /* CustomFloatingPanelController.swift */; };
 		F03AD50D29E857F3008BBFBB /* CustomFloatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03AD50C29E857F3008BBFBB /* CustomFloatingView.swift */; };
+		F0C4C9B929E97EF100A469BC /* CountyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4C9B829E97EF100A469BC /* CountyModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		F03AD4FF29E84E16008BBFBB /* CustomGrabberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGrabberView.swift; sourceTree = "<group>"; };
 		F03AD50A29E857D6008BBFBB /* CustomFloatingPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFloatingPanelController.swift; sourceTree = "<group>"; };
 		F03AD50C29E857F3008BBFBB /* CustomFloatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFloatingView.swift; sourceTree = "<group>"; };
+		F0C4C9B829E97EF100A469BC /* CountyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				04B24A8929E885E20014AA16 /* CityModel.swift */,
+				F0C4C9B829E97EF100A469BC /* CountyModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				04B24A8329E881D80014AA16 /* HomeViewModel.swift in Sources */,
 				04B24A8D29E891D70014AA16 /* PharmacyTableViewCell.swift in Sources */,
 				04B24A7429E862F30014AA16 /* CustomTextField.swift in Sources */,
+				F0C4C9B929E97EF100A469BC /* CountyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
