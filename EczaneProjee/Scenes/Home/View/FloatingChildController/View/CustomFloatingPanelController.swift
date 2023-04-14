@@ -14,7 +14,11 @@ final class CustomFloatingPanelController: UIViewController {
     let customView = CustomFloatingView()
     
     private let disposeBag = DisposeBag()
-    weak var viewModel: FloatingPanelViewModel?
+    var viewModel: FloatingPanelViewModel?
+    
+    var cancelButtonTapped: Observable<Void> {
+        return self.customView.headerView.cancelButton.rx.tap.asObservable()
+    }
     
     init(viewModel: FloatingPanelViewModel? = nil) {
         self.viewModel = viewModel
@@ -29,22 +33,44 @@ final class CustomFloatingPanelController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = customView
-        setReactiveFloatingTableView()
       
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureViewController()
+    }
+    
+    private func configureViewController() {
+        setViewModelReactive()
+        setReactiveFloatingTableView()
         guard let viewModel = viewModel else { return }
         viewModel.getPharmacyList(viewModel.selectedCity, viewModel.selectedCounty)
     }
     
+    
+ 
+}
+
+//MARK: - Creating Reactives
+
+extension CustomFloatingPanelController {
+    
     private func setReactiveFloatingTableView() {
         viewModel?.pharmacyList.bind(to: customView.pharmacyTableView.rx.items(cellIdentifier: PharmacyTableViewCell.identifier, cellType: PharmacyTableViewCell.self)) { row,pharmacy,cell in
             cell.setWithData(pharmacy)
+            
         }.disposed(by: disposeBag)
+        
+        customView.pharmacyTableView.rowHeight = 120
     }
     
-
-
+    private func setViewModelReactive() {
+        viewModel?.pharmacyList.subscribe(onNext: { [weak self] pharmacyList in
+            guard let self = self else { return }
+            let header = customView.headerView
+            header.cityLabel.text = viewModel?.selectedCity.localizedCapitalized
+            header.pharmacyCountLabel.text = "\(pharmacyList.count) adet eczane nöbetçi"
+        }).disposed(by: disposeBag)
+    }
 }

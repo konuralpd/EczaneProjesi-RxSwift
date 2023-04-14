@@ -12,6 +12,7 @@ import RxSwift
 final class FloatingPanelViewModel {
     let disposedBag = DisposeBag()
     public var pharmacyList = PublishSubject<[Pharmacy]>()
+    public var arrayPharmacyList = [Pharmacy]()
     
     var selectedCity: String
     var selectedCounty: String
@@ -29,7 +30,7 @@ final class FloatingPanelViewModel {
             case .next(let pharmacyList):
                 if let list = pharmacyList?.data {
                     self.pharmacyList.onNext(list)
-                    print(list)
+                    self.arrayPharmacyList = list
                 }
             case .error(let error):
                 print(error.localizedDescription)

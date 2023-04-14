@@ -44,22 +44,43 @@ final class HomeController: UIViewController {
 extension HomeController {
     
     private func createReactives() {
+        setHomeViewReactives()
         setReactiveSearchTextField()
         setReactiveTableView()
         setReactiveCountyTableView()
         viewModel.getCities()
     }
     
-    private func setReactiveSearchTextField() {
-        homeView.searchTextField.rx.text.changed.subscribe { [weak self] text in
-            guard let self = self, let text = text else { return }
-            self.viewModel.filterCities(text)
+    
+    private func setHomeViewReactives() {
+        homeView.textFieldRightButton.rx.tap.subscribe { _ in
+            print("cancel")
         }.disposed(by: disposeBag)
+    }
+    
+    private func setReactiveSearchTextField() {
+        homeView.searchTextField.rx.text.subscribe { [weak self] text in
+            guard let self = self else { return  }
+            if let text = text {
+                self.viewModel.filterCities(text)
+                if text == "" {
+                    self.homeView.textFieldRightButton.isHidden = true
+                } else {
+                    self.homeView.textFieldRightButton.isHidden = false
+
+                }
+            }
+            
+            
+            
+        }.disposed(by: disposeBag)
+        
         
         homeView.searchTextField.rx.controlEvent(.touchDown).subscribe { [weak self] _ in
             guard let self = self else { return }
             self.homeView.makeTableViewAnimation()
         }.disposed(by: disposeBag)
+        
     }
     
     private func setReactiveTableView() {
@@ -99,7 +120,7 @@ extension HomeController {
         }.disposed(by: disposeBag)
         
         homeView.countySelectionTableView.rx.itemSelected.subscribe { [weak self] indexpath in
-            guard let cell = self?.homeView.countySelectionTableView.cellForRow(at: indexpath) as? CountySelectTableViewCell, let countySlug = self?.viewModel.arrayCountyList[indexpath.row].ilceSlug else { return }
+            guard let _ = self?.homeView.countySelectionTableView.cellForRow(at: indexpath) as? CountySelectTableViewCell, let countySlug = self?.viewModel.arrayCountyList[indexpath.row].ilceSlug else { return }
             self?.viewModel.selectedCounty = countySlug // Send view Model to selected City
             guard let selectedCity = self?.viewModel.selectedCity else { return }
             
@@ -127,6 +148,13 @@ extension HomeController {
             guard let grabber = view as? GrabberView else { return }
             grabber.removeFromSuperview()
         }
+        
+        // header cancel button tapped
+        customFloatingPanelController.cancelButtonTapped.subscribe { [weak self] _ in
+            guard let self = self else { return }
+            self.floationgPanel.move(to: .tip, animated: true)
+        }.disposed(by: disposeBag)
+        
     }
     
 }

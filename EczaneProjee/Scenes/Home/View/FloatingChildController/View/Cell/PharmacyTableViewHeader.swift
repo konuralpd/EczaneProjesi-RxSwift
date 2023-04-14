@@ -9,17 +9,16 @@ import UIKit
 
 class PharmacyTableViewHeader: UIView {
     
-    private lazy var cityLabel: UILabel = {
+    lazy var cityLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "İstanbul"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        label.font = UIFont.systemFont(ofSize: 20)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.6
         return label
     }()
     
-    private lazy var cancelButton: UIButton = {
+    lazy var cancelButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -28,22 +27,21 @@ class PharmacyTableViewHeader: UIView {
         return button
     }()
     
-    private lazy var pharmacyCountLabel: UILabel = {
+    lazy var pharmacyCountLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "3 eczane bulundu"
         label.font = UIFont.systemFont(ofSize: 15)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.6
         return label
     }()
     
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-                addSubview(cityLabel)
-                addSubview(cancelButton)
-                addSubview(pharmacyCountLabel)
+        addSubview(cityLabel)
+        addSubview(cancelButton)
+        addSubview(pharmacyCountLabel)
         
         NSLayoutConstraint.activate([
             cityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
@@ -64,5 +62,5 @@ class PharmacyTableViewHeader: UIView {
     }
     
     
-
+    
 }

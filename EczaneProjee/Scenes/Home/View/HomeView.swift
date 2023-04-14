@@ -79,6 +79,14 @@ final class HomeView: UIView {
         return field
     }()
     
+    lazy var textFieldRightButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "xmark"), for: .normal)
+        button.imageView?.tintColor = .black
+        button.isHidden = true
+        return button
+    }()
     
     let mapViewTapGesture: UITapGestureRecognizer = {
         let gesture = UITapGestureRecognizer()
@@ -140,6 +148,7 @@ extension HomeView {
         navigationView.addSubview(logoImageView)
         mapView.addSubview(searchTextField)
         searchTextField.addSubview(textFieldLeftImageView)
+        searchTextField.addSubview(textFieldRightButton)
         mapView.addSubview(citySelectionTableView)
         mapView.addSubview(countySelectionTableView)
     }
@@ -182,6 +191,11 @@ extension HomeView {
             textFieldLeftImageView.centerYAnchor.constraint(equalTo: searchTextField.centerYAnchor),
             textFieldLeftImageView.widthAnchor.constraint(equalToConstant: 24),
             textFieldLeftImageView.heightAnchor.constraint(equalToConstant: 24)
+        ])
+        
+        NSLayoutConstraint.activate([
+            textFieldRightButton.trailingAnchor.constraint(equalTo: searchTextField.trailingAnchor, constant: -8),
+            textFieldRightButton.centerYAnchor.constraint(equalTo: searchTextField.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([

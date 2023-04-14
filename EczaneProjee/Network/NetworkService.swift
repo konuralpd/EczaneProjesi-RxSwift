@@ -27,7 +27,6 @@ final class NetworkService: ServiceProtocol {
     }
     
     func getPharmacyList(_ city: String, _ county: String) -> Observable<PharmacyModel?> {
-        print(EndPointCases.getPharmacy(city, county).url)
         return NetworkManager.shared.request(path: EndPointCases.getPharmacy(city, county).url)
     }
 }

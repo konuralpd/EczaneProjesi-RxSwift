@@ -18,8 +18,15 @@ final class CustomFloatingView: UIView {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.register(PharmacyTableViewCell.self, forCellReuseIdentifier: PharmacyTableViewCell.identifier)
+        table.allowsSelection = false
         table.backgroundColor = .white.withAlphaComponent(0.92)
         return table
+    }()
+    
+    lazy var headerView: PharmacyTableViewHeader = {
+        let header = PharmacyTableViewHeader(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 84))
+        
+        return header
     }()
     
     //MARK: - Init Methods
@@ -36,9 +43,7 @@ final class CustomFloatingView: UIView {
     
     private func makeTableView() {
         addSubview(pharmacyTableView)
-       
-        pharmacyTableView.tableHeaderView = PharmacyTableViewHeader(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 84))
-        
+        pharmacyTableView.tableHeaderView = headerView
     }
     
     required init?(coder: NSCoder) {
