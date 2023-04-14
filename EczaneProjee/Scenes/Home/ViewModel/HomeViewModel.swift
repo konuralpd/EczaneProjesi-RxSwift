@@ -16,8 +16,13 @@ final class HomeViewModel {
     public var cityList = PublishSubject<[City]>()
     
     public var countyList = PublishSubject<[County]>()
+    
     var arrayCityList = [City]()
+    var arrayCountyList = [County]()
     var filteredCityList = [City]()
+    
+    var selectedCity : String = ""
+    var selectedCounty: String = ""
 
     func getCities() {
         NetworkService.shared.getCities().subscribe { [weak self] event in
@@ -50,6 +55,7 @@ final class HomeViewModel {
             switch event {
             case .next(let counties):
                 if let counties = counties?.data {
+                    self.arrayCountyList = counties
                     self.countyList.onNext(counties)
                 }
             case .error(let error):
@@ -59,4 +65,5 @@ final class HomeViewModel {
             }
         }.disposed(by: disposedBag)
     }
+  
 }

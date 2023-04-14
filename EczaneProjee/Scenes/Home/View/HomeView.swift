@@ -53,6 +53,17 @@ final class HomeView: UIView {
         return table
     }()
     
+    lazy var countySelectionTableView: UITableView = {
+         let table = UITableView()
+          table.register(CountySelectTableViewCell.self, forCellReuseIdentifier: CountySelectTableViewCell.identifier)
+          table.backgroundColor = .white
+          table.translatesAutoresizingMaskIntoConstraints = false
+          table.layer.masksToBounds = true
+          table.layer.cornerRadius = 8
+          table.alpha = 0
+          return table
+      }()
+    
     lazy var searchTextField: CustomTextField = {
         let field = CustomTextField(
             placeholder: "Şehir Ara",
@@ -79,7 +90,9 @@ final class HomeView: UIView {
 
     
     var isCitySelectionOpen = false
+    var isCountySelectionOpen = false
 
+    
     //MARK: - Init Methods
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -97,8 +110,8 @@ final class HomeView: UIView {
     private func tapGestureCallbacks() {
         mapViewTapGesture.rx.event.bind { [weak self] recognizer in
             guard let self = self else { return }
-            if !citySelectionTableView.frame.contains(self.mapViewTapGesture.location(in: mapView)) {
-                makeTableViewAnimation()
+            if !self.citySelectionTableView.frame.contains(self.mapViewTapGesture.location(in: self.mapView)) {
+                self.makeTableViewAnimation()
             }
         }.disposed(by: disposeBag)
     }
@@ -128,6 +141,7 @@ extension HomeView {
         mapView.addSubview(searchTextField)
         searchTextField.addSubview(textFieldLeftImageView)
         mapView.addSubview(citySelectionTableView)
+        mapView.addSubview(countySelectionTableView)
     }
     
     private func setupConstraints() {
@@ -176,6 +190,14 @@ extension HomeView {
             citySelectionTableView.centerYAnchor.constraint(equalTo: centerYAnchor),
             citySelectionTableView.heightAnchor.constraint(lessThanOrEqualToConstant: UIScreen.main.bounds.height / 3)
         ])
+
+        NSLayoutConstraint.activate([
+           countySelectionTableView.leadingAnchor.constraint(equalTo: searchTextField.leadingAnchor),
+           countySelectionTableView.trailingAnchor.constraint(equalTo: searchTextField.trailingAnchor),
+           countySelectionTableView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 12),
+           countySelectionTableView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 3)
+       ])
+       
         
     }
     
@@ -195,4 +217,23 @@ extension HomeView {
         }
         self.isCitySelectionOpen.toggle()
     }
+    
+    func makeCountyTableViewAnimation() {
+        self.citySelectionTableView.alpha = 0
+        self.countySelectionTableView.alpha = 1
+        
+//           if !isCountySelectionOpen {
+//                UIView.animate(withDuration: 0.5) {
+//                    self.countySelectionTableView.alpha = 1
+//                    let moveY = self.navigationView.frame.height + 12 + self.searchTextField.frame.height
+//                    self.citySelectionTableView.transform = CGAffineTransform(translationX: 0, y: -(moveY))
+//                }
+//           } else {
+//               UIView.animate(withDuration: 0.5) {
+//                   self.countySelectionTableView.alpha = 0
+//                   self.countySelectionTableView.transform = .identity
+//               }
+//           }
+//           self.isCountySelectionOpen.toggle()
+       }
 }

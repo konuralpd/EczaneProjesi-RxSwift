@@ -10,6 +10,7 @@ import Foundation
 enum EndPointCases: EndPoint {
     case getCities
     case getCounties(String)
+    case getPharmacy(String, String)
     
     var apiKey: String {
         return ""
@@ -29,6 +30,8 @@ enum EndPointCases: EndPoint {
             return "/city?"
         case .getCounties(let city):
             return "/city?city=\(city)"
+        case .getPharmacy(let city, let county):
+            return "?city=\(city)&county=\(county)"
         }
     }
     

@@ -14,6 +14,9 @@
 		046878FD29DF1777003CB807 /* EczaneProjeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046878FC29DF1777003CB807 /* EczaneProjeeTests.swift */; };
 		0468790729DF1777003CB807 /* EczaneProjeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468790629DF1777003CB807 /* EczaneProjeeUITests.swift */; };
 		0468790929DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468790829DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift */; };
+		04AC0CDE29E9A18F00DFC277 /* CountySelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC0CDD29E9A18F00DFC277 /* CountySelectionTableViewCell.swift */; };
+		04AC0CE029E9AC6500DFC277 /* PharmacyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC0CDF29E9AC6500DFC277 /* PharmacyModel.swift */; };
+		04AC0CE329E9B22000DFC277 /* FloatingPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC0CE229E9B22000DFC277 /* FloatingPanelViewModel.swift */; };
 		04B24A6729E845270014AA16 /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 04B24A6629E845270014AA16 /* FloatingPanel */; };
 		04B24A6A29E845360014AA16 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04B24A6929E845360014AA16 /* Alamofire */; };
 		04B24A6D29E845480014AA16 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 04B24A6C29E845480014AA16 /* RxCocoa */; };
@@ -68,6 +71,9 @@
 		0468790229DF1777003CB807 /* EczaneProjeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EczaneProjeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0468790629DF1777003CB807 /* EczaneProjeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EczaneProjeeUITests.swift; sourceTree = "<group>"; };
 		0468790829DF1777003CB807 /* EczaneProjeeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EczaneProjeeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04AC0CDD29E9A18F00DFC277 /* CountySelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountySelectionTableViewCell.swift; sourceTree = "<group>"; };
+		04AC0CDF29E9AC6500DFC277 /* PharmacyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyModel.swift; sourceTree = "<group>"; };
+		04AC0CE229E9B22000DFC277 /* FloatingPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPanelViewModel.swift; sourceTree = "<group>"; };
 		04B24A7329E862F30014AA16 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		04B24A7629E8729C0014AA16 /* CitySelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectTableViewCell.swift; sourceTree = "<group>"; };
 		04B24A7929E87BD00014AA16 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -169,6 +175,14 @@
 			path = EczaneProjeeUITests;
 			sourceTree = "<group>";
 		};
+		04AC0CE129E9B21400DFC277 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04AC0CE229E9B22000DFC277 /* FloatingPanelViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		04B24A7229E862E10014AA16 /* CustomTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				04B24A7629E8729C0014AA16 /* CitySelectTableViewCell.swift */,
+				04AC0CDD29E9A18F00DFC277 /* CountySelectionTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -210,6 +225,7 @@
 			children = (
 				04B24A8929E885E20014AA16 /* CityModel.swift */,
 				F0C4C9B829E97EF100A469BC /* CountyModel.swift */,
+				04AC0CDF29E9AC6500DFC277 /* PharmacyModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,6 +322,7 @@
 		F03AD50829E857AB008BBFBB /* FloatingChildController */ = {
 			isa = PBXGroup;
 			children = (
+				04AC0CE129E9B21400DFC277 /* ViewModel */,
 				F03AD50929E857B9008BBFBB /* View */,
 			);
 			path = FloatingChildController;
@@ -463,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04AC0CE029E9AC6500DFC277 /* PharmacyModel.swift in Sources */,
 				046878E629DF1775003CB807 /* AppDelegate.swift in Sources */,
 				04B24A8A29E885E20014AA16 /* CityModel.swift in Sources */,
 				F03AD50B29E857D6008BBFBB /* CustomFloatingPanelController.swift in Sources */,
@@ -475,11 +493,13 @@
 				046878E829DF1775003CB807 /* SceneDelegate.swift in Sources */,
 				F03AD4F729E8282B008BBFBB /* HomeController.swift in Sources */,
 				04B24A8729E885760014AA16 /* NetworkService.swift in Sources */,
+				04AC0CE329E9B22000DFC277 /* FloatingPanelViewModel.swift in Sources */,
 				F03AD50D29E857F3008BBFBB /* CustomFloatingView.swift in Sources */,
 				04B24A9029E8956B0014AA16 /* PharmacyTableViewHeader.swift in Sources */,
 				F03AD4FC29E842F5008BBFBB /* UIViewController+HideKeyboard.swift in Sources */,
 				F03AD50029E84E16008BBFBB /* CustomGrabberView.swift in Sources */,
 				04B24A8329E881D80014AA16 /* HomeViewModel.swift in Sources */,
+				04AC0CDE29E9A18F00DFC277 /* CountySelectionTableViewCell.swift in Sources */,
 				04B24A8D29E891D70014AA16 /* PharmacyTableViewCell.swift in Sources */,
 				04B24A7429E862F30014AA16 /* CustomTextField.swift in Sources */,
 				F0C4C9B929E97EF100A469BC /* CountyModel.swift in Sources */,
