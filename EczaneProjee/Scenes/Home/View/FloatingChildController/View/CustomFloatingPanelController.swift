@@ -68,8 +68,8 @@ extension CustomFloatingPanelController {
     private func setViewModelReactive() {
         viewModel?.pharmacyList.subscribe(onNext: { [weak self] pharmacyList in
             guard let self = self else { return }
-            let header = customView.headerView
-            header.cityLabel.text = viewModel?.selectedCity.localizedCapitalized
+            let header = self.customView.headerView
+            header.cityLabel.text = self.viewModel?.selectedCity.localizedCapitalized
             header.pharmacyCountLabel.text = "\(pharmacyList.count) adet eczane nöbetçi"
         }).disposed(by: disposeBag)
     }
